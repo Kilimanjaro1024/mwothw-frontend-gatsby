@@ -2,19 +2,23 @@ import React from 'react'
 import Profile from './Profile'
 import MyPosts from './MyPosts'
 import AccountInfo from "./AccountInfo"
+import Link from "gatsby-link"
+
 
 const ProfileContent = (props) => {
     
 
     if(props.content === "Posts"){
         return(
-            <MyPosts path="/profile/posts"/>
+            <div>
+                <Link to="/new/">Register</Link>
+                <MyPosts path="/profile/posts"/>
+            </div>
         )
     }
     else if(props.content === "Liked"){
         return(
-            <div>Liked Posts</div>
-            // <MyPosts path="/profile/liked"/>
+            <MyPosts path="/profile/liked"/>
         )
     }
     else if(props.content === "Info"){
